@@ -27,7 +27,6 @@ feature "User signs up", %Q{
 
     click_button 'Sign up'
     expect(page).to have_content("can't be blank")
-    expect(page).to_not have_content("Sign Out")
   end
 
   scenario 'password not confirmed' do
@@ -38,7 +37,6 @@ feature "User signs up", %Q{
 
     click_button 'Sign up'
     expect(page).to have_content("doesn't match")
-    expect(page).to_not have_content("Sign Out")
   end
 
 end

@@ -17,6 +17,7 @@ feature "User signs up", %Q{
     fill_in 'Email', with: 'user@example.com'
     fill_in 'user_password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
+    fill_in 'Username', with: 'user'
 
     click_button 'Sign up'
     expect(page).to have_content("success")
@@ -34,6 +35,7 @@ feature "User signs up", %Q{
     fill_in 'Email', with: 'user@example.com'
     fill_in 'user_password', with: 'password'
     fill_in 'Password confirmation', with: 'idiot'
+    fill_in 'Username', with: 'user'
 
     click_button 'Sign up'
     expect(page).to have_content("doesn't match")

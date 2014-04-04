@@ -1,0 +1,14 @@
+<h1><%= @user.handle %></h1>
+
+<% if @user == current_user %>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :preferred_fighting %>
+    <%= f.input :preferred_roles %>
+    <%= f.input :other %>
+    <%= f.button :submit, 'Save' %>
+  <% end %>
+<% else %>
+  <p><%= @user.preferred_fighting %></p>
+  <p><%= @user.preferred_roles %></p>
+  <p><%= @user.other %></p>
+<% end %>
